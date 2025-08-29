@@ -15,6 +15,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"@shared/*": ["./src/shared/*"],
+			"@services/*": ["./src/services/*"],
+			"@resolvers/*": ["./src/resolvers/*"],
 			"@/*": ["./src/*"]
 		}
 	},
