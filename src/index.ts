@@ -1,7 +1,8 @@
 import { appServer } from '@/server';
+import { env } from '@shared/utils/envConfig';
 
-const server = appServer.listen(8080, () => {
-	console.log(`Server running on port ${8080}`);
+const server = appServer.listen(env.PORT, () => {
+	console.log(`Server running on port ${env.PORT}`);
 });
 
 const onCloseSignal = () => {
