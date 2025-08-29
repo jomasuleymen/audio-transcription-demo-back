@@ -13,8 +13,8 @@ export const resolvers: Resolvers = {
 	},
 
 	Mutation: {
-		createTranscriptionJob: async () => {
-			return createTranscriptionJob();
+		createTranscriptionJob: async (_, { fileName, contentType }) => {
+			return createTranscriptionJob(fileName, contentType);
 		},
 
 		confirmFileUpload: (_, { id }) => {

@@ -1,6 +1,7 @@
 type TranscriptionJob {
 	id: ID!
 	s3Url: String!
+	fileName: String!
 	status: JobStatus!
 	transcriptionText: String
 }

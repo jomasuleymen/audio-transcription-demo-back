@@ -58,6 +58,7 @@ export type QueryJobArgs = {
 
 export type TranscriptionJob = {
   __typename?: 'TranscriptionJob';
+  fileName: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   s3Url: Scalars['String']['output'];
   status: JobStatus;
@@ -173,6 +174,7 @@ export type QueryResolvers<ContextType = any, ParentType extends ResolversParent
 };
 
 export type TranscriptionJobResolvers<ContextType = any, ParentType extends ResolversParentTypes['TranscriptionJob'] = ResolversParentTypes['TranscriptionJob']> = {
+  fileName?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   id?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
   s3Url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   status?: Resolver<ResolversTypes['JobStatus'], ParentType, ContextType>;
