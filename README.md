@@ -11,6 +11,9 @@ GraphQL API server for audio transcription with S3 file storage.
 
 2. **Environment configuration:**
    Create `.env` file in the server root with the required variables (see `.env.example`).
+   ```bash
+   cp .env.example .env
+   ```
 
 3. **Start MinIO (local S3):**
    ```bash
