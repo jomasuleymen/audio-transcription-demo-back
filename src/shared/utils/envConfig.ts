@@ -7,6 +7,15 @@ dotenv.config();
 const envSchema = z.object({
 	NODE_ENV: z.enum(Env).default(Env.DEVELOPMENT),
 	PORT: z.coerce.number().int().positive().default(8080),
+	CORS_ORIGIN: z
+		.string()
+		.nonempty()
+		.transform((val) =>
+			val
+				.split(',')
+				.map((v) => v.trim())
+				.filter(Boolean)
+		),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
