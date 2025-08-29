@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"lib": ["es2023"],
+		"moduleResolution": "Node",
+		"outDir": "dist",
+
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"types": ["node"],
+
+		"baseUrl": ".",
+		"paths": {
+			"@/*": ["./src/*"]
+		}
+	},
+
+	"ts-node": {
+		"require": ["tsconfig-paths/register"]
+	},
+
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "dist"]
+}

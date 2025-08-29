@@ -1,0 +1,40 @@
+{
+	"name": "audio-transcription",
+	"version": "0.0.1",
+	"main": "index.ts",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tsc && tsup",
+		"start:dev": "node --import=tsx --watch src/index.ts",
+		"start:prod": "node dist/index.js",
+		"check": "biome check --write"
+	},
+	"dependencies": {
+		"express": "5.1.0"
+	},
+	"devDependencies": {
+		"@types/express": "5.0.3",
+		"@types/node": "^24.3.0",
+		"tsconfig-paths": "^4.2.0",
+		"tsup": "8.5.0",
+		"tsx": "4.20.5",
+		"typescript": "^5.9.2"
+	},
+	"tsup": {
+		"entry": [
+			"src/index.ts"
+		],
+		"outDir": "dist",
+		"format": [
+			"esm",
+			"cjs"
+		],
+		"target": "es2022",
+		"sourcemap": true,
+		"clean": true,
+		"dts": true,
+		"splitting": false,
+		"skipNodeModulesBundle": true
+	}
+}
