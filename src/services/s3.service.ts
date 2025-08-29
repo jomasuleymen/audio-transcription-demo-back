@@ -21,7 +21,6 @@ const s3Client = new S3Client({
 
 export const generateS3PresignedUrl = async (
 	bucketName: string,
-	fileName: string,
 	contentType: string,
 	ttl: number = 900
 ): Promise<{ uploadUrl: string; key: string }> => {
@@ -31,7 +30,6 @@ export const generateS3PresignedUrl = async (
 		Bucket: bucketName,
 		Key: key,
 		ContentType: contentType,
-		ContentDisposition: `inline; filename="${fileName}"`,
 	});
 
 	const uploadUrl = await getSignedUrl(s3Client, command, { expiresIn: ttl });

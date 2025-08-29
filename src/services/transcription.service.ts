@@ -15,7 +15,6 @@ export const createTranscriptionJob = async (
 }> => {
 	const { uploadUrl, key } = await generateS3PresignedUrl(
 		S3_BUCKET_NAMES.TRANSCRIPTION_JOBS,
-		fileName,
 		contentType
 	);
 
