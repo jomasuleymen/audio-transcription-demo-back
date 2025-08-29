@@ -1,0 +1,27 @@
+type TranscriptionJob {
+	id: ID!
+	s3Url: String!
+	status: JobStatus!
+	transcriptionText: String
+}
+
+enum JobStatus {
+	WAITING
+	PROCESSING
+	COMPLETED
+}
+
+type CreateTranscriptionJobResponse {
+	job: TranscriptionJob!
+	uploadUrl: String!
+}
+
+type Mutation {
+	createTranscriptionJob(fileName: String!, contentType: String!): CreateTranscriptionJobResponse!
+	confirmFileUpload(id: ID!): TranscriptionJob!
+}
+
+type Query {
+	jobs: [TranscriptionJob!]!
+	job(id: ID!): TranscriptionJob
+}
