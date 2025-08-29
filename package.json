@@ -11,6 +11,8 @@
 		"check": "biome check --write"
 	},
 	"dependencies": {
+		"@apollo/server": "^5.0.0",
+		"@as-integrations/express5": "^1.1.2",
 		"cors": "^2.8.5",
 		"dotenv": "^17.2.1",
 		"express": "5.1.0",
@@ -23,7 +25,9 @@
 		"tsconfig-paths": "^4.2.0",
 		"tsup": "8.5.0",
 		"tsx": "4.20.5",
-		"typescript": "^5.9.2"
+		"typescript": "^5.9.2",
+		"@graphql-tools/load-files": "^7.0.1",
+		"@graphql-tools/merge": "^9.1.1"
 	},
 	"tsup": {
 		"entry": [
