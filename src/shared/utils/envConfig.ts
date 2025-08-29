@@ -16,6 +16,11 @@ const envSchema = z.object({
 				.map((v) => v.trim())
 				.filter(Boolean)
 		),
+
+	S3_ENDPOINT: z.string().nonempty(),
+	S3_ACCESS_KEY_ID: z.string().nonempty(),
+	S3_SECRET_ACCESS_KEY: z.string().nonempty(),
+	S3_REGION: z.string().nonempty(),
 });
 
 const parsedEnv = envSchema.safeParse(process.env);
